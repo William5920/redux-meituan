@@ -1,23 +1,24 @@
 import NavBar from './components/NavBar';
 import Menu from './components/Menu';
 import FoodsCategory from './components/FoodsCategory';
-import Cart from './components/Cart';
+// import Cart from './components/Cart';
 
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchFoodsList } from './store/modules/foodsReducer';
-// import { useEffect } from 'react';
+import './App.scss';
+import { useDispatch } from 'react-redux';
+import { fetchFoodsList } from './store/modules/foodsReducer';
+import { useEffect } from 'react';
 
 function App() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(fetchFoodsList());
-  // }, [dispatch]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchFoodsList());
+  }, [dispatch]);
 
   // const { foodsList } = useSelector(state => state.foods);
 
   // 页面结构
   return (
-    <div className="App">
+    <div className="home">
       { /* 导航 */ }
       <NavBar />
       
@@ -35,7 +36,7 @@ function App() {
       </div>
 
       {/* 购物车 */}
-      <Cart />
+      {/* <Cart /> */}
     </div>
   );
 }

@@ -4,17 +4,21 @@ import axios from "axios";
 const foodsStore = createSlice({
     name: 'foods',
     initialState: {
-        foodsList: []
+        foodsList: [],
+        activeIndex: 0
     },
     reducers: {
         setFoodsList(state, action) {
             state.foodsList = action.payload;
+        },
+        changeActiveIndex(state, action) {
+            state.activeIndex = action.payload;
         }
     }
 });
 
 // 异步获取数据
-const { setFoodsList } = foodsStore.actions;
+const { setFoodsList, changeActiveIndex } = foodsStore.actions;
 const fetchFoodsList = () => {
     return async (dispatch) => {
         const res = await axios.get('http://localhost:3004/takeaway');
@@ -22,6 +26,6 @@ const fetchFoodsList = () => {
     }
 };
 
-export { fetchFoodsList };
+export { fetchFoodsList, changeActiveIndex };
 const foodsReducer = foodsStore.reducer;
 export default foodsReducer;
