@@ -46,6 +46,16 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2px;
+    .plus {
+      width: 18px;
+      height: 18px;
+      background-color: #ff8000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      margin-left: 4px;
+    }
   }
   .goods-detail {
     display: flex;

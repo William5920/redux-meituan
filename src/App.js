@@ -1,7 +1,7 @@
 import NavBar from './components/NavBar';
 import Menu from './components/Menu';
 import FoodsCategory from './components/FoodsCategory';
-// import Cart from './components/Cart';
+import Cart from './components/Cart';
 
 import './App.scss';
 import { useDispatch, useSelector } from 'react-redux';
@@ -46,7 +46,7 @@ function App() {
       </div>
 
       {/* 购物车 */}
-      {/* <Cart /> */}
+      <Cart />
     </div>
   );
 }
